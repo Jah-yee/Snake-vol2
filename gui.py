@@ -55,7 +55,7 @@ class GameWindow:
         background_color="black")
         self.layout = [[self.field]]
         self.snake = logic.Snake()
-        self.apple_pos = logic.Enviroment.generate_apple(self.CELLS_VERTICAL, self.CELLS_HORIZONTAL, self.snake)
+        self.apple_pos = logic.Environment.generate_apple(self.CELLS_VERTICAL, self.CELLS_HORIZONTAL, self.snake)
     
     @staticmethod
     def position_to_pixels(point, CELL_SIZE):
@@ -110,7 +110,7 @@ class GameWindow:
             if action_time >= self.DIFFICULTY: #if any action has not been taken within chosen time then snake moves anyway(to prevent stopping) the shorter the time the faster snake moves
                 begin_time = time()
                 snake_update = self.snake.snake_update(direction, self.CELLS_VERTICAL, self.CELLS_HORIZONTAL, self.apple_pos, )
-                if snake_update == 1: self.apple_pos = logic.Enviroment.generate_apple(self.CELLS_VERTICAL, self.CELLS_HORIZONTAL, self.snake)
+                if snake_update == 1: self.apple_pos = logic.Environment.generate_apple(self.CELLS_VERTICAL, self.CELLS_HORIZONTAL, self.snake)
                 elif snake_update == -1: self.restart_game_popup_window(self.snake.snake_body, window)
                 else: self.field.DrawRectangle((0, 0), (self.CELL_SIZE*self.CELLS_VERTICAL, self.CELL_SIZE*self.CELLS_HORIZONTAL), "black")
 

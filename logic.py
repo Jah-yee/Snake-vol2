@@ -30,7 +30,7 @@ class Point:
         self.x = x
         self.y = y
 
-class Enviroment:
+class Environment:
     def generate_apple(CELLS_VERTICAL, CELLS_HORIZONTAL, snake):
         snake_body_arr =[]
         for body in snake.snake_body:
